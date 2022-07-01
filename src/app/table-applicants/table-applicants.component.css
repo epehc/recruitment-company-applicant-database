@@ -1,0 +1,27 @@
+table {
+    width: 80%;
+    margin: 10%;
+    border-radius: 1.5rem;
+  }
+
+  tr{
+    text-align: left;
+  }
+  
+  th{
+    padding: 1%;
+    font-size: 18px;
+    font-weight: bolder;
+    background-color: brown;
+    color: white;
+  }
+  
+  td{
+    padding: 10px;
+    font-size: 18px;
+  }
+  
+  tr:nth-child(even){
+    background-color: darkgray;
+    color: white;
+  }

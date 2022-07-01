@@ -1,0 +1,58 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- No. DPI Column -->
+    <ng-container matColumnDef="no_dpi">
+      <th mat-header-cell *matHeaderCellDef> No. de DPI </th>
+      <td mat-cell *matCellDef="let element"> {{element.no_dpi}} </td>
+    </ng-container>
+  
+    <!-- Fecha Column -->
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef> Fecha </th>
+      <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+    </ng-container>
+  
+    <!-- Nombre Completo Column -->
+    <ng-container matColumnDef="nombre_completo">
+      <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre_completo}} </td>
+    </ng-container>
+  
+    <!-- Puesto al que aplica Column -->
+    <ng-container matColumnDef="puesto_al_que_aplica">
+      <th mat-header-cell *matHeaderCellDef> Puesto al que aplica </th>
+      <td mat-cell *matCellDef="let element"> {{element.puesto_al_que_aplica}} </td>
+    </ng-container>
+
+    <!-- Como se entero Column -->
+    <ng-container matColumnDef="como_se_entero">
+        <th mat-header-cell *matHeaderCellDef> Como se entero </th>
+        <td mat-cell *matCellDef="let element"> {{element.como_se_entero}} </td>
+      </ng-container>
+
+      <!-- No Telefono Column -->
+      <ng-container matColumnDef="no_telefono">
+        <th mat-header-cell *matHeaderCellDef> No. Telefono </th>
+        <td mat-cell *matCellDef="let element"> {{element.no_telefono}} </td>
+      </ng-container>
+
+       <!-- No Celular Column -->
+      <ng-container matColumnDef="no_celular">
+        <th mat-header-cell *matHeaderCellDef> No. Celular </th>
+        <td mat-cell *matCellDef="let element"> {{element.no_celular}} </td>
+      </ng-container>
+
+       <!-- Acciones Column -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element"> 
+            <app-applicant-modal></app-applicant-modal>
+        </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
