@@ -9,6 +9,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class WorkInformationComponent {
 
+  view = 1;
+
   workForm =  new FormGroup({
     empresa1_nombre: new FormControl(),
     empresa1_fecha_inicio: new FormControl(),
@@ -60,8 +62,11 @@ export class WorkInformationComponent {
   });
   constructor() { }
 
+  setView(newView: number){
+    this.view = newView;
+  }
   onFormSubmit(): void {
     console.log('holi');
-  } 
+  }
 
 }

@@ -8,16 +8,21 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./dialog-applicant-content.component.css']
 })
 export class DialogApplicantContentComponent implements OnInit {
-  
-  
+
+  view = "personal";
+
   constructor(public dialogRef: MatDialogRef<DialogApplicantContentComponent>) {}
 
   ngOnInit(): void {
   }
 
+  setView(newView: string){
+    this.view = newView;
+  }
+
   close(){
     this.dialogRef.close();
   }
-  
+
 
 }

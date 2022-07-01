@@ -8,6 +8,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class StudiesInformationComponent  {
 
+  view = 'default';
+
   constructor() { }
 
   studiesForm =  new FormGroup({
@@ -31,8 +33,12 @@ export class StudiesInformationComponent  {
 
   });
 
+  setView(newView: string){
+    this.view = newView;
+  }
+
   onFormSubmit(): void {
     console.log('holi');
-} 
+}
 
 }

@@ -2,39 +2,24 @@
 <div class="container">
 
     <div class="container-body">
+      <div class="container-header">
         <h1 mat-dialog-title>Informacion Del Candidato</h1>
-        <mat-dialog-content>
-          <div class="button-bar">
-            <button mat-button>Personal</button>
-            <button mat-button>Estudios</button>
-            <button mat-button>Laboral</button>
-          </div>
-            <h2>Informacion Personal</h2>
-            <app-personal-information></app-personal-information>
-
-            <h2>Informacion de Estudios</h2>
-          <div class="button-bar">
-            <button mat-button>Doctorado</button>
-            <button mat-button>Maestria</button>
-            <button mat-button>Licenciatura</button>
-            <button mat-button>Tecnico</button>
-            <button mat-button>Adicionales</button>
-          </div>
-            <app-studies-information></app-studies-information>
-
-            <h2>Informacion Laboral</h2>
-          <div class="button-bar">
-            <button mat-button>Trabajo 1</button>
-            <button mat-button>Trabajo 2</button>
-            <button mat-button>Trabajo 3</button>
-            <button mat-button>Trabajo 4</button>
-          </div>
-            <app-work-information></app-work-information>
-
+        <div class="button-bar">
+          <button mat-button (click)="setView('personal')">Personal</button>
+          <button mat-button (click)="setView('study')">Estudios</button>
+          <button mat-button (click)="setView('work')" >Laboral</button>
+        </div>
+      </div>
+      <mat-dialog-content>
+        <div [ngSwitch]="view">
+          <app-personal-information *ngSwitchCase="'personal'"></app-personal-information>
+          <app-studies-information *ngSwitchCase="'study'"></app-studies-information>
+          <app-work-information *ngSwitchCase="'work'"></app-work-information>
+        </div>
         </mat-dialog-content>
         <mat-dialog-actions>
-          <button name= "update" class="mat-raised-button" >Actualizar</button>
-          <button name= "close" class="mat-raised-button" (click)="close()">Cerrar</button>
+          <button id= "update" class="update" >Actualizar</button>
+          <button id= "close" class="close" (click)="close()">Cerrar</button>
         </mat-dialog-actions>
     </div>
 
